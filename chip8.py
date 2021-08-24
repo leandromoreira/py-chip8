@@ -23,7 +23,7 @@ class CPU(object):
     def __init__(self):
         # The VF register should not be used by any program, as it is used as
         # a flag by some instructions.
-        self.V = [0] * 0xF # 16 registers (8 bit)
+        self.V = [0] * 0x10 # 16 registers (8 bit)
         self.I = 0x0000 # so only the lowest (rightmost) 12 bits are usually used
         self.DELAY = 0x0000
         self.SOUND = 0x0000
