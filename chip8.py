@@ -30,3 +30,21 @@ class CPU(object):
         self.PC = 0x0000
         self.SP = 0xEFF
 
+
+class Machine(object):
+    def __init__(self):
+        self.mem = Memory()
+        self.cpu = CPU()
+
+    def execute(self):
+        # fetch
+        opcode = self.mem.read(self.cpu.PC)
+
+        # decode
+        if opcode >> 4 == 0x7: # OPCODE 7xkk ADD Vx, byte
+            x = opcode & 0b1111
+            # store
+            self.cpu.V[x] += self.mem.read(self.cpu.PC + 1)
+
+        self.cpu.PC += 2 # move to next instruction
+
