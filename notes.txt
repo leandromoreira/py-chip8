@@ -1,0 +1,15 @@
+Beyond the 
+
+* country geo block
+* add custom data to the sign process (to identify piracy)
+* single request per token?
+
+https://cloud.google.com/media-edge/docs/security-policies?authuser=1
+
+seems to help the geo block but we'd need an ip/anycast per country
+
+add  signed request user info piracy
+HeaderName & HeaderName &
+
+how to direct google the usage of signed or path... can we use both without saying?
+
